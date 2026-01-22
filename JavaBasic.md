@@ -1,5 +1,5 @@
 # Java Basics:
-```java
+ 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -15,7 +15,7 @@ Access modifier, means it can be accessed from anywhere.
 ## static: 
 It can be run without creating an object of the class.
 Example:
-
+```java
 class MathUtils {
 
     // Instance method (not static)
@@ -28,6 +28,7 @@ class MathUtils {
         return ; 
     }
 }
+
 
 public class Main {
 
@@ -46,6 +47,7 @@ public class Main {
         System.out.println("Square: " + result);
     }
 }
+```
 
 ## void: 
 It does not return any value.
@@ -54,7 +56,7 @@ It does not return any value.
 Command line arguments. We can pass inputs to the program when running it from the command line.
 
 Example:
-
+```java
 public class CommandLineExample {
 
     public static void main(String[] args) {
@@ -74,7 +76,7 @@ public class CommandLineExample {
         }
     }
 }
-
+```
 
 ## String:
 Strings are objects in Java, not primitives. They store text.
@@ -84,43 +86,44 @@ Immutable: Once created, a String object cannot be changed. Modifying it creates
 ## String Declarations in Java
 
 1. String Literal
-
+```java
     String s1 = "Hello";   
+```
 - Stored in the String pool.
 - Reused if another literal "Hello" is declared.
 
 2. Using new Keyword
-
+```java
     String s2 = new String("Hello");
+```
 - Creates a new object in heap memory, even if "Hello" already exists in the pool.
 
 3. String from char[]
-
+```java
     char[] chars = {'J', 'a', 'v', 'a'};
     String s5 = new String(chars);
+```
 - Converts a character array into a String.
 
 4. String from byte[]
-
+```java
     byte[] bytes = {65, 66, 67}; // ASCII values for A, B, C
-
     String s6 = new String(bytes);
+```
 - Converts byte array into a String ("ABC").
 
 5. StringBuilder / StringBuffer (Mutable)
-
+```java
     StringBuilder sb = new StringBuilder("Hello");
-
     sb.append(" World");
-
     System.out.println(sb.toString()); // "Hello World"
+```
 - Unlike String, these are mutable (can be changed without creating new objects).
 
 6. String to Char Array
-
+```java
     String str = "World";
-
     char[] arr3 = str.toCharArray();
-
+```
 
 

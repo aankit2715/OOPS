@@ -1,4 +1,4 @@
-## Java Basics:
+# Java Basics:
 
 public class Main {
     public static void main(String[] args) {
@@ -6,13 +6,13 @@ public class Main {
     }
 }
 
-# public static void main(String[] args): 
+## public static void main(String[] args): 
 This is the entry point.
 
-# public: 
+## public: 
 Access modifier, means it can be accessed from anywhere.
 
-# static: 
+## static: 
 It can be run without creating an object of the class.
 Example:
 
@@ -47,10 +47,10 @@ public class Main {
     }
 }
 
-# void: 
+## void: 
 It does not return any value.
  
-# String[] args: 
+## String[] args: 
 Command line arguments. We can pass inputs to the program when running it from the command line.
 
 Example:
@@ -76,12 +76,12 @@ public class CommandLineExample {
 }
 
 
-# String:
+## String:
 Strings are objects in Java, not primitives. They store text.
 
 Immutable: Once created, a String object cannot be changed. Modifying it creates a new object.
 
-# String Declarations in Java
+## String Declarations in Java
 
 1. String Literal
 

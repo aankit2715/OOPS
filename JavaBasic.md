@@ -54,7 +54,6 @@ Command line arguments. We can pass inputs to the program when running it from t
 Example:
 
 public class CommandLineExample {
-
     public static void main(String[] args) {
 
         // Check if arguments are provided
@@ -70,7 +69,7 @@ public class CommandLineExample {
         } else {
 
             System.out.println("No arguments passed!");
-            
+
         }
     }
 }

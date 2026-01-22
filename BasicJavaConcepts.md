@@ -126,4 +126,18 @@ Immutable: Once created, a String object cannot be changed. Modifying it creates
     char[] arr3 = str.toCharArray();
 ```
 
+## Scanner class vs BufferedReader class
+
+- For input, we use the Scanner class or BufferedReader class.
+
+| Aspect              | Scanner Class (`java.util`)                          | BufferedReader Class (`java.io`)                  |
+|---------------------|------------------------------------------------------|--------------------------------------------------|
+| Ease of Use         | Provides built-in methods like `nextInt()`, `nextDouble()`, `nextLine()` for parsing input directly. | Only reads text as strings; you must manually parse into other types. |
+| Performance         | Slower due to parsing overhead and tokenization.     | Faster because it uses efficient buffering.       |
+| Buffer Size         | Smaller buffer.                                      | Larger buffer → better performance for bulk input.|
+| Thread Safety       | Not thread-safe.                                     | Thread-safe.                                     |
+| Use Case            | Best for simple console input where you know the data type (e.g., reading numbers, words). | Best for reading large text files or streams efficiently. |
+| Package             | `java.util`                                          | `java.io`                                        |
+
+
 

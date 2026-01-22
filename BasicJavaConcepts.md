@@ -168,4 +168,10 @@ public class BufferedReaderExample {
 }
 ```
 
+## Professional Recommendation
+
+- Use Scanner → for small programs, console input, and when parsing different data types is needed  quickly.
+
+- Use BufferedReader → for performance-critical applications, reading large files, or when working with streams.
+
 

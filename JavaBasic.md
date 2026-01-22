@@ -103,19 +103,23 @@ Immutable: Once created, a String object cannot be changed. Modifying it creates
 4. String from byte[]
 
     byte[] bytes = {65, 66, 67}; // ASCII values for A, B, C
+
     String s6 = new String(bytes);
 - Converts byte array into a String ("ABC").
 
 5. StringBuilder / StringBuffer (Mutable)
 
     StringBuilder sb = new StringBuilder("Hello");
+
     sb.append(" World");
+
     System.out.println(sb.toString()); // "Hello World"
 - Unlike String, these are mutable (can be changed without creating new objects).
 
 6. String to Char Array
 
     String str = "World";
+    
     char[] arr3 = str.toCharArray();
 
 

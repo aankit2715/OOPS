@@ -1,5 +1,5 @@
 # Java Basics:
-
+```java
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -119,7 +119,7 @@ Immutable: Once created, a String object cannot be changed. Modifying it creates
 6. String to Char Array
 
     String str = "World";
-    
+
     char[] arr3 = str.toCharArray();
 
 

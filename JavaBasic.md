@@ -17,6 +17,7 @@ It can be run without creating an object of the class.
 Example:
 
 class MathUtils {
+
     // Instance method (not static)
     int square(int x) {
         return x * x;
@@ -29,6 +30,7 @@ class MathUtils {
 }
 
 public class Main {
+    
     public static void main(String[] args) {
 
         // Calling static method without creating object

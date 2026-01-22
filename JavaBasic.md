@@ -11,6 +11,7 @@ This is the entry point.
 
 #public: 
 Access modifier, means it can be accessed from anywhere.
+
 #static: 
 It can be run without creating an object of the class.
 Example:
@@ -51,16 +52,25 @@ It does not return any value.
 Command line arguments. We can pass inputs to the program when running it from the command line.
 
 Example:
+
 public class CommandLineExample {
+
     public static void main(String[] args) {
+
         // Check if arguments are provided
         if (args.length > 0) {
+
             System.out.println("Arguments passed:");
+
             for (int i = 0; i < args.length; i++) {
+
                 System.out.println("args[" + i + "]: " + args[i]);
+
             }
         } else {
+
             System.out.println("No arguments passed!");
+            
         }
     }
 }

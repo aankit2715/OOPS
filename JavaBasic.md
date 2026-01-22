@@ -83,7 +83,7 @@ Immutable: Once created, a String object cannot be changed. Modifying it creates
 
 ## String Declarations in Java
 
-1. String Literal
+(1.) String Literal
 
    String s1 = "Hello";
    

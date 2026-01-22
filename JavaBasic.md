@@ -83,38 +83,40 @@ Immutable: Once created, a String object cannot be changed. Modifying it creates
 
 ## String Declarations in Java
 
-(1.) String Literal
+1. String Literal
 
    String s1 = "Hello";
    
-Stored in the String pool.
-Reused if another literal "Hello" is declared.
+- Stored in the String pool.
+- Reused if another literal "Hello" is declared.
 
 2. Using new Keyword
 
 String s2 = new String("Hello");
 
-Creates a new object in heap memory, even if "Hello" already exists in the pool.
+- Creates a new object in heap memory, even if "Hello" already exists in the pool.
 
 3. String from char[]
 
 char[] chars = {'J', 'a', 'v', 'a'};
 String s5 = new String(chars);
 
-Converts a character array into a String.
+- Converts a character array into a String.
 
 4. String from byte[]
 
 byte[] bytes = {65, 66, 67}; // ASCII values for A, B, C
 String s6 = new String(bytes);
 
-Converts byte array into a String ("ABC").
+- Converts byte array into a String ("ABC").
 
 5. StringBuilder / StringBuffer (Mutable)
 
 StringBuilder sb = new StringBuilder("Hello");
 sb.append(" World");
 System.out.println(sb.toString()); // "Hello World"
+
+- Unlike String, these are mutable (can be changed without creating new objects).
 
 6. String to Char Array
 

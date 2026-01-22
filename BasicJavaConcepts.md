@@ -139,5 +139,33 @@ Immutable: Once created, a String object cannot be changed. Modifying it creates
 | Use Case            | Best for simple console input where you know the data type (e.g., reading numbers, words). | Best for reading large text files or streams efficiently. |
 | Package             | `java.util`                                          | `java.io`                                        |
 
+- Example with Scanner:
+```java
+import java.util.Scanner;
+
+public class ScannerExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        System.out.println("You entered: " + num);
+    }
+}
+```
+
+- Example with BufferedReader:
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class BufferedReaderExample {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter a line: ");
+        String line = br.readLine();
+        System.out.println("You entered: " + line);
+    }
+}
+```
 
 

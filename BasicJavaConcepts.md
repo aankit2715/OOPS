@@ -200,5 +200,66 @@ int myInt = (int) myDouble; // Explicit casting: double → int
 System.out.println(myInt); // Output: 9 (fraction lost)
 ```
 
+# Object-Oriented Programming (OOP)
+
+Object-Oriented Programming (OOP) is a programming paradigm (a style of writing code) based on the concept of objects which can contain data and code.
+
+It majorly consists of two things:
+
+- Class: A class is a blueprint or template that defines the properties (attributes) and behaviors (methods) common to all objects of its type.
+- Object: An object is an instance of a class, representing a specific entity with its own unique state (attribute values) and behavior.
+
+## Procedural Programming Example
+
+Procedural programming is about writing code in a step-by-step sequence of instructions. Functions (methods) are separate, and data is passed around. In pure procedural programming (like C), there are no classes or objects — just functions and data structures. But if you write Java code in a procedural style (step-by-step functions), you’ll still technically have a class wrapper, but you may not create objects.
+
+```java
+// Procedural style: step-by-step instructions
+public class ProceduralExample {
+    public static void main(String[] args) {
+        int a = 5;
+        int b = 3;
+
+        // Call a function to add numbers
+        int sum = addNumbers(a, b);
+
+        System.out.println("Sum: " + sum);
+    }
+
+    // Function (procedure) to add two numbers
+    public static int addNumbers(int x, int y) {
+        return x + y;
+    }
+}
+```
+
+## Object-Oriented Programming Example
+
+OOP organizes code around objects that combine data (attributes) and behavior (methods).
+
+```java 
+// OOP style: using objects
+class Calculator {
+    // Attribute (not needed here, but can store state)
+    String name = "Simple Calculator";
+
+    // Method (behavior)
+    int add(int x, int y) {
+        return x + y;
+    }
+}
+
+public class OOPExample {
+    public static void main(String[] args) {
+        // Create an object of Calculator
+        Calculator calc = new Calculator();
+
+        // Use the object to perform addition
+        int sum = calc.add(5, 3);
+
+        System.out.println(calc.name + " result: " + sum);
+    }
+}
+```
 
 

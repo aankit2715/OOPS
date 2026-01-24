@@ -176,7 +176,7 @@ public class BufferedReaderExample {
 
 ## Type Casting
 
-- Type casting is the process of converting a value from one data type to another. In Java, there are two main types of casting:
+Type casting is the process of converting a value from one data type to another. In Java, there are two main types of casting:
 
 1. Implicit Casting (Widening Conversion)
 

@@ -9,7 +9,7 @@ In simple words:
     - Expose only necessary operations through methods (getters/setters).
     - Prevent direct modification of fields from outside the class.
 
-    ```java
+```java
     class Student {
     // Private fields (data hidden)
     private String name;
@@ -55,6 +55,7 @@ public class EncapsulationExample {
         s1.setAge(-5); // Will show validation message
     }
 }
+
 ```
 
 # 🎯 Summary

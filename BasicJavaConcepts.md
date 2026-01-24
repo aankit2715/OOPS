@@ -262,4 +262,68 @@ public class OOPExample {
 }
 ```
 
+## Constructor
+
+- A constructor is a special method in Java that is used to initialize objects.
+- It has the same name as the class.
+- It does not have a return type (not even void).
+- It is automatically called when you create an object using new.
+
+## Types of Constructors
+
+1. Default Constructor
+
+- Provided by Java if you don’t define any constructor.
+- Initializes objects with default values.
+
+2. No-Argument Constructor
+
+- A constructor you define without parameters.
+
+3. Parameterized Constructor
+
+- A constructor that takes arguments to initialize an object with specific values.
+
+Example:
+
+```java
+class Student {
+    String name;
+    int age;
+
+    // No-argument constructor 
+    Student() { 
+        name = "Ankit"; age = 28; 
+    }
+
+    // Parameterized constructor
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+}
+
+public class ConstructorExample {
+    public static void main(String[] args) {
+
+        Student s1 = new Student(); // Constructor called automatically 
+        System.out.println(s1.name + " - " + s1.age);
+
+        Student s2 = new Student("Alice", 20); // Constructor with parameters
+        Student s3 = new Student("Bob", 22);
+
+        System.out.println(s2.name + " - " + s2.age);
+        System.out.println(s3.name + " - " + s3.age);
+    }
+}
+
+✅ Output:
+
+Ankit - 28
+Alice - 20
+Bob - 22
+```
+
+
+
 

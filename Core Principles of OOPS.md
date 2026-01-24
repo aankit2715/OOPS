@@ -4,10 +4,9 @@ Encapsulation is one of the four pillars of Object-Oriented Programming (OOP).
 It means wrapping data (variables/fields) and methods (functions) together into a single unit (class), and controlling access to that data using access modifiers.
 
 In simple words:
-
-    - Hide the internal details of how data is stored.
-    - Expose only necessary operations through methods (getters/setters).
-    - Prevent direct modification of fields from outside the class.
+- Hide the internal details of how data is stored.
+- Expose only necessary operations through methods (getters/setters).
+- Prevent direct modification of fields from outside the class.
 
 ```java
     class Student {

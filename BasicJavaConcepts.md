@@ -174,4 +174,31 @@ public class BufferedReaderExample {
 
 - Use BufferedReader → for performance-critical applications, reading large files, or when working with streams.
 
+## Type Casting
+
+- Type casting is the process of converting a value from one data type to another. In Java, there are two main types of casting:
+
+1. Implicit Casting (Widening Conversion)
+
+- Occurs automatically when a smaller data type is assigned to a larger data type.  
+- Example: converting int to double.
+
+```java
+int myInt = 9;
+double myDouble = myInt; // Implicit casting: int → double
+System.out.println(myDouble); // Output: 9.0
+```
+
+2. Explicit Casting (Narrowing Conversion)
+
+- Must be done manually by the programmer using parentheses. Used when converting a larger data type to a smaller one.
+- May cause data loss (e.g., fractional part is discarded when converting double to int).
+
+```java
+double myDouble = 9.78;
+int myInt = (int) myDouble; // Explicit casting: double → int
+System.out.println(myInt); // Output: 9 (fraction lost)
+```
+
+
 

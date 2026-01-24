@@ -273,16 +273,16 @@ public class OOPExample {
 
 1. Default Constructor
 
-- Provided by Java if you don’t define any constructor.
-- Initializes objects with default values.
+    - Provided by Java if you don’t define any constructor.
+    - Initializes objects with default values.
 
 2. No-Argument Constructor
 
-- A constructor you define without parameters.
+    - A constructor you define without parameters.
 
 3. Parameterized Constructor
 
-- A constructor that takes arguments to initialize an object with specific values.
+    - A constructor that takes arguments to initialize an object with specific values.
 
 Example:
 

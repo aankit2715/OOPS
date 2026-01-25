@@ -1,3 +1,47 @@
+## Access Modifiers
+
+Access modifiers are keywords in object-oriented programming (like Java, C++, C#) that define the visibility/scope of classes, methods, and variables.
+They control who can access what in your code.
+
+## Types of Access Modifiers
+
+| Modifier   | Scope / Visibility                                | Example Use Case                          |
+|------------|---------------------------------------------------|-------------------------------------------|
+| **public** | Accessible from **anywhere** (inside or outside the class, package, project). | Methods like `main()` or utility functions. |
+| **protected** | Accessible within the **same package** and by **subclasses** (even in different packages). | Useful for inheritance when child classes need parent’s methods/fields. |
+| **default** (no keyword) | Accessible only within the **same package**. | Package-level helper classes. |
+| **private** | Accessible only within the **same class**. | Encapsulation: hiding internal details of a class. |
+
+```java
+class Example {
+    public int publicVar = 10;       // Accessible everywhere
+    protected int protectedVar = 20; // Accessible in same package + subclasses
+    int defaultVar = 30;             // Accessible only in same package
+    private int privateVar = 40;     // Accessible only in this class
+
+    // Public method
+    public void showPublic() {
+        System.out.println("Public Method");
+    }
+
+    // Private method
+    private void showPrivate() {
+        System.out.println("Private Method");
+    }
+}
+
+class Test extends Example {
+    void display() {
+        System.out.println(publicVar);     // ✅ allowed
+        System.out.println(protectedVar);  // ✅ allowed (subclass)
+        // System.out.println(defaultVar); // ❌ not allowed if in different package
+        // System.out.println(privateVar); // ❌ not allowed (private)
+    }
+}
+
+```
+
+
 ## Encapsulation
 
 Encapsulation is one of the four pillars of Object-Oriented Programming (OOP).

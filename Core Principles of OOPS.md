@@ -228,3 +228,54 @@ public class TestInheritance {
     }
 }
 ```
+
+- Hierarchical Inheritance Example
+
+```java
+// Base class (Parent)
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle starts with a key.");
+    }
+}
+
+// Child class 1
+class Car extends Vehicle {
+    void drive() {
+        System.out.println("Car drives on four wheels.");
+    }
+}
+
+// Child class 2
+class Bike extends Vehicle {
+    void ride() {
+        System.out.println("Bike rides on two wheels.");
+    }
+}
+
+public class TestInheritance {
+    public static void main(String[] args) {
+        Car car = new Car();
+        Bike bike = new Bike();
+
+        // Car inherits from Vehicle
+        car.start();
+        car.drive();
+
+        // Bike inherits from Vehicle
+        bike.start();
+        bike.ride();
+    }
+}
+```
+
+## Diamond Problem 
+
+```mermaid
+graph TD
+    A[Class A] --> B[Class B]
+    A --> C[Class C]
+    B --> D[Class D]
+    C --> D[Class D]
+```
+

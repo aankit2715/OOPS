@@ -334,3 +334,58 @@ int main() {
 ```
 
 Java avoids multiple inheritance of classes to prevent ambiguity and complexity. But, Java allows multiple inheritance of interfaces.
+
+## Polymorphism
+
+In programming (especially OOP), polymorphism means the ability of a single function, method, or operator to behave differently based on the context.
+
+In Java (and most OOP languages), polymorphism allows:
+
+- One interface, many implementations.
+
+- A parent class reference can point to child class objects, and the correct method is chosen at runtime.
+
+##  Types of Polymorphism
+
+1. Compile-time polymorphism (Method Overloading)
+
+    - Same method name, different parameter list.
+
+    - Decided at compile time.
+
+2. Runtime polymorphism (Method Overriding)
+
+    - Child class provides its own version of a method defined in the parent class.
+
+    - Decided at runtime using dynamic method dispatch.
+
+- Compile-time Polymorphism Example:
+```java
+class Printer {
+    // Print an integer
+    void print(int num) {
+        System.out.println("Printing integer: " + num);
+    }
+
+    // Print a string
+    void print(String text) {
+        System.out.println("Printing string: " + text);
+    }
+
+    // Print a double
+    void print(double value) {
+        System.out.println("Printing double: " + value);
+    }
+}
+
+public class TestPolymorphism {
+    public static void main(String[] args) {
+        Printer p = new Printer();
+
+        // Compiler decides which method to call based on argument type
+        p.print(100);          // Calls int version
+        p.print("Hello");      // Calls String version
+        p.print(99.99);        // Calls double version
+    }
+}
+```

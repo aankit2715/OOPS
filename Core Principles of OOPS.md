@@ -108,3 +108,75 @@ public class EncapsulationExample {
 - Achieved in Java by:
     - Making fields private.
     - Providing public getters and setters.
+
+
+## Inheritance
+
+Inheritance is an OOP concept where one class (child/derived class) can reuse the properties and methods of another class (parent/base class).
+
+- It promotes code reusability and hierarchical relationships.
+- The child class can also add new features or override existing ones from the parent.
+
+```java
+import java.util.*;
+import java.util.*;
+
+// Parent class or super class
+class School {
+    // Private attribute for school name
+    private String schoolName;
+
+    // Constructor initializes the school name
+    School() {
+        schoolName = "DPS"; // Default school name
+    }
+
+    // Method to print the school name
+    void printSchoolName() {
+        System.out.println("School name: " + schoolName);
+    }
+}
+
+// Subclass or child class
+class Student extends School {
+    // Private attribute for student name
+    private String studentName;
+
+    // Constructor initializes the student name
+    Student(String name) {
+        this.studentName = name;
+    }
+
+    // Method to print the student name
+    void printStudentName() {
+        System.out.println("Student name: " + studentName);
+    }
+}
+
+// Main class to execute the program
+class Main {
+    public static void main(String[] args) {
+        // Create a new student object with the name "Raj"
+        Student student = new Student("Raj");
+
+        // Print the student's name
+        student.printStudentName();
+
+        // Print the school's name
+        student.printSchoolName();
+    }
+}
+```
+1. Single Inheritance
+
+    Parent Class
+        ↓
+    Child Class
+
+2. Multilevel Inheritance
+ 
+    Base Class
+        ↓
+    Intermediate Class
+        ↓
+    Derived Class

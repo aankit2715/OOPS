@@ -279,3 +279,58 @@ graph TD
     C --> D[Class D]
 ```
 
+# Diamond Problem Example (C++)
+
+```c++
+#include <iostream>
+using namespace std;
+
+// Base class
+class Device {
+public:
+    void powerOn() {
+        cout << "Device is powered on." << endl;
+    }
+};
+
+// Derived class 1
+class Phone : public Device {
+public:
+    void call() {
+        cout << "Phone can make calls." << endl;
+    }
+};
+
+// Derived class 2
+class Camera : public Device {
+public:
+    void clickPhoto() {
+        cout << "Camera can take photos." << endl;
+    }
+};
+
+// Derived class that inherits from both Phone and Camera
+class SmartPhone : public Phone, public Camera {
+public:
+    void smartFeature() {
+        cout << "Smartphone can run apps." << endl;
+    }
+};
+
+int main() {
+    SmartPhone samsung;
+
+    samsung.smartFeature();   // ✅ Defined in SmartPhone
+    samsung.call();           // ✅ From Phone
+    samsung.clickPhoto();     // ✅ From Camera
+
+    // ❌ Ambiguity: Which 'powerOn()' should be called?
+    // samsung.powerOn(); // ERROR: inherited twice (from Phone and Camera)
+
+    // Workaround: explicitly specify the path
+    samsung.Phone::powerOn();   // Calls Device via Phone
+    samsung.Camera::powerOn();  // Calls Device via Camera
+}
+```
+
+Java avoids multiple inheritance of classes to prevent ambiguity and complexity. Java allows multiple inheritance of interfaces.

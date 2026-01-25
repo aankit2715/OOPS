@@ -168,7 +168,7 @@ class Main {
 }
 ```
  
-## Types of Inheritance (Mermaid Diagram)
+## Types of Inheritance 
 
 ```mermaid
 graph TD
@@ -189,4 +189,42 @@ graph TD
         I[Parent Class 1] --> J[Child Class]
         K[Parent Class 2] --> J
     end
+```
+
+```java
+// Base class (Parent)
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle starts with a key.");
+    }
+}
+
+// Derived class (Single Inheritance)
+class Car extends Vehicle {
+    void drive() {
+        System.out.println("Car drives on four wheels.");
+    }
+}
+
+// Derived class from Car (Multilevel Inheritance)
+class ElectricCar extends Car {
+    void charge() {
+        System.out.println("Electric car charges using electricity.");
+    }
+}
+
+public class TestInheritance {
+    public static void main(String[] args) {
+        ElectricCar tesla = new ElectricCar();
+
+        // Inherited from Vehicle
+        tesla.start();
+
+        // Inherited from Car
+        tesla.drive();
+
+        // Defined in ElectricCar
+        tesla.charge();
+    }
+}
 ```

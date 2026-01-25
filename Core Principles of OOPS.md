@@ -167,16 +167,26 @@ class Main {
     }
 }
 ```
-1. Single Inheritance
-
-    Parent Class
-        ↓
-    Child Class
-
-2. Multilevel Inheritance
  
-    Base Class
-        ↓
-    Intermediate Class
-        ↓
-    Derived Class
+## Types of Inheritance (Mermaid Diagram)
+
+```mermaid
+graph TD
+    subgraph Single Inheritance
+        A[Parent Class] --> B[Child Class]
+    end
+
+    subgraph Multilevel Inheritance
+        C[Base Class] --> D[Intermediate Class] --> E[Derived Class]
+    end
+
+    subgraph Hierarchical Inheritance
+        F[Parent Class] --> G[Child Class 1]
+        F --> H[Child Class 2]
+    end
+
+    subgraph Multiple Inheritance
+        I[Parent Class 1] --> J[Child Class]
+        K[Parent Class 2] --> J
+    end
+

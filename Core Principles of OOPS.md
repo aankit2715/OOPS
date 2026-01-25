@@ -279,7 +279,7 @@ graph TD
     C --> D[Class D]
 ```
 
-# Diamond Problem Example (C++)
+## Diamond Problem Example (C++)
 
 ```c++
 #include <iostream>
@@ -333,4 +333,4 @@ int main() {
 }
 ```
 
-Java avoids multiple inheritance of classes to prevent ambiguity and complexity. Java allows multiple inheritance of interfaces.
+Java avoids multiple inheritance of classes to prevent ambiguity and complexity. But, Java allows multiple inheritance of interfaces.

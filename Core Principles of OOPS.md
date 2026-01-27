@@ -359,7 +359,7 @@ In Java (and most OOP languages), polymorphism allows:
 
     - Decided at runtime using dynamic method dispatch.
 
-# Compile-time Polymorphism Example:
+## Compile-time Polymorphism Example:
 ```java
 class Printer {
     void print(int num) {
@@ -392,7 +392,7 @@ public class TestPolymorphism {
 }
 ```
 
-# Run-time Polymorphism Example:
+## Run-time Polymorphism Example:
 
 ```java
 class Animal {

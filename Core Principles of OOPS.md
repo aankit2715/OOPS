@@ -359,22 +359,24 @@ In Java (and most OOP languages), polymorphism allows:
 
     - Decided at runtime using dynamic method dispatch.
 
-- Compile-time Polymorphism Example:
+# Compile-time Polymorphism Example:
 ```java
 class Printer {
-    // Print an integer
     void print(int num) {
         System.out.println("Printing integer: " + num);
     }
 
-    // Print a string
     void print(String text) {
         System.out.println("Printing string: " + text);
     }
 
-    // Print a double
     void print(double value) {
         System.out.println("Printing double: " + value);
+    }
+
+    // Overloaded with different number of parameters
+    void print(int a, int b) {
+        System.out.println("Printing sum of two integers: " + (a + b));
     }
 }
 
@@ -382,10 +384,46 @@ public class TestPolymorphism {
     public static void main(String[] args) {
         Printer p = new Printer();
 
-        // Compiler decides which method to call based on argument type
-        p.print(100);          // Calls int version
-        p.print("Hello");      // Calls String version
-        p.print(99.99);        // Calls double version
+        p.print(100);          // int version
+        p.print("Hello");      // String version
+        p.print(99.99);        // double version
+        p.print(10, 20);       // two-parameter version
+    }
+}
+```
+
+# Run-time Polymorphism Example:
+
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a;   // Parent reference
+
+        a = new Dog();
+        a.sound();  // Dog’s version
+
+        a = new Cat();
+        a.sound();  // Cat’s version
     }
 }
 ```

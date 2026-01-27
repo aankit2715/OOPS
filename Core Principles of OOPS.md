@@ -427,3 +427,59 @@ public class Test {
     }
 }
 ```
+
+## Abstract Class
+
+- An abstract class in Java is a class that cannot be instantiated directly (you can’t create objects from it).
+- It can contain:
+    - Abstract methods (methods without a body, only a declaration).
+    - Concrete methods (normal methods with implementation).
+- It acts as a blueprint for other classes.
+- Subclasses must provide implementations for the abstract methods.
+
+## Example of Abstract Class
+
+```java
+abstract class Animal {
+    // Abstract method (no body)
+    abstract void sound();
+
+    // Normal method (with body)
+    void sleep() {
+        System.out.println("Animal is sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class TestAbstract {
+    public static void main(String[] args) {
+        // Animal a = new Animal(); ❌ Not allowed (abstract class cannot be instantiated)
+
+        Animal a = new Dog();   // Allowed: reference of abstract class pointing to child
+        a.sound();              // Dog’s implementation
+        a.sleep();              // Inherited concrete method
+
+        a = new Cat();
+        a.sound();              // Cat’s implementation
+    }
+}
+
+✅ Output
+ 
+Dog barks
+Animal is sleeping...
+Cat meows
+```

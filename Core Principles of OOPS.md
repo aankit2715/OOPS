@@ -483,3 +483,72 @@ Dog barks
 Animal is sleeping...
 Cat meows
 ```
+
+## 🎯 Why Use Abstract Classes?
+
+- To enforce a contract: All subclasses must implement certain methods.
+- To share common code: Abstract class can provide default implementations (like sleep() above).
+- To achieve abstraction: Focus on what needs to be done, not how.
+
+## Abstraction
+
+- Abstraction means hiding the implementation details and showing only the essential features of an object.
+- It allows you to focus on what an object does, not how it does it.
+- In Java, abstraction is achieved using:
+    - Abstract classes (with abstract methods that must be implemented by subclasses).
+    - Interfaces (which define a contract that implementing classes must fulfill).
+
+- Example:
+```java
+// Abstract class
+abstract class Payment {
+    // Abstract method (no body)
+    abstract void pay(double amount);
+
+    // Concrete method (with body)
+    void showPaymentMessage() {
+        System.out.println("Processing payment...");
+    }
+}
+
+// Subclass 1
+class CreditCardPayment extends Payment {
+    @Override
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card.");
+    }
+}
+
+// Subclass 2
+class UpiPayment extends Payment {
+    @Override
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using UPI.");
+    }
+}
+
+public class TestAbstraction {
+    public static void main(String[] args) {
+        Payment p;  // Reference of abstract class
+
+        p = new CreditCardPayment();
+        p.showPaymentMessage();
+        p.pay(500); // User only knows "pay", not how credit card works
+
+        p = new UpiPayment();
+        p.showPaymentMessage();
+        p.pay(300); // User only knows "pay", not how UPI works
+    }
+}
+
+✅ Output
+
+Processing payment...
+Paid 500.0 using Credit Card.
+Processing payment...
+Paid 300.0 using UPI.
+```
+
+- So in your example:
+    - The user of the Payment class only knows they can call pay(amount) and showPaymentMessage().
+    - They don’t need to know how credit card or UPI payments are processed internally. That detail is hidden inside the subclass.

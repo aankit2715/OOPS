@@ -622,3 +622,76 @@ public class TestInterface {
 ```
 
 - The interface Vehicle defines what every vehicle must be able to do (start(), stop()), but not how.
+
+## Static Method
+- A static method belongs to the class itself, not to any specific object.
+- Declared using the static keyword.
+- Can be called without creating an object of the class.
+- Often used for utility/helper functions or logic that doesn’t depend on instance variables.
+- Cannot use this or super → Because they don’t belong to an object.
+
+Example:
+```java
+class MathUtils {
+    // Static method
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+
+public class TestStatic {
+    public static void main(String[] args) {
+        // Call static method using class name
+        int result = MathUtils.add(5, 3);
+        System.out.println("Sum: " + result);
+    }
+}
+```
+
+## Default Method
+- A default method is a method inside an interface that has a body (implementation).
+- Introduced in Java 8 to allow interfaces to evolve without breaking existing code.
+
+Example
+```java
+interface Vehicle {
+    void start();   // abstract method
+
+    // Default method with implementation
+    default void fuelType() {
+        System.out.println("Uses petrol or diesel");
+    }
+}
+
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car starts with a key");
+    }
+}
+
+class ElectricCar implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Electric car starts silently");
+    }
+
+    // Override default method
+    @Override
+    public void fuelType() {
+        System.out.println("Uses electricity");
+    }
+}
+
+public class TestDefaultMethod {
+    public static void main(String[] args) {
+        Vehicle v1 = new Car();
+        v1.start();
+        v1.fuelType();   // Calls default method
+
+        Vehicle v2 = new ElectricCar();
+        v2.start();
+        v2.fuelType();   // Calls overridden method
+    }
+}
+```

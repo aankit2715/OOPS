@@ -490,6 +490,25 @@ Cat meows
 - To share common code: Abstract class can provide default implementations (like sleep() above).
 - To achieve abstraction: Focus on what needs to be done, not how.
 
+## Interface
+
+- An interface in Java is a contract that defines what a class must do, but not how it does it.
+- It contains abstract methods (methods without a body).
+- A class that implements an interface must provide the implementation for all its methods.
+- Interfaces are used to achieve abstraction and multiple inheritance (since a class can implement multiple interfaces).
+
+## Abstract Class vs Interface
+
+| Feature            | Abstract Class                                                                 | Interface                                                                 |
+|--------------------|---------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| **Instantiation**  | Cannot be instantiated directly                                                 | Cannot be instantiated directly                                           |
+| **Methods**        | Can have abstract methods (no body) **and** concrete methods (with body)        | Traditionally only abstract methods (no body). Since Java 8, can have **default** and **static** methods with logic |
+| **Variables**      | Can have instance variables (fields)                                            | Can only have `public static final` constants (no instance variables)     |
+| **Inheritance**    | A class can extend only **one** abstract class (single inheritance)             | A class can implement **multiple interfaces** (supports multiple inheritance) |
+| **Access Modifiers** | Methods can have any access modifier (public, protected, private)             | Methods are implicitly `public abstract` (before Java 9). Default and static methods can have modifiers |
+| **Use Case**       | Used when you want to provide a **common base class** with some shared code + enforce certain methods | Used when you want to define a **contract** that multiple unrelated classes can implement |
+
+
 ## Abstraction
 
 - Abstraction means hiding the implementation details and showing only the essential features of an object.
@@ -498,7 +517,7 @@ Cat meows
     - Abstract classes (with abstract methods that must be implemented by subclasses).
     - Interfaces (which define a contract that implementing classes must fulfill).
 
-- Example:
+- Example with Abstract class:
 ```java
 // Abstract class
 abstract class Payment {
@@ -552,3 +571,54 @@ Paid 300.0 using UPI.
 - So in your example:
     - The user of the Payment class only knows they can call pay(amount) and showPaymentMessage().
     - They don’t need to know how credit card or UPI payments are processed internally. That detail is hidden inside the subclass.
+
+- Example with Interface:
+```java
+// Interface (pure abstraction)
+interface Vehicle {
+    void start();   // abstract method
+    void stop();    // abstract method
+}
+
+// Class 1: Car implements Vehicle
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car starts with a key.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Car stops with brake pedal.");
+    }
+}
+
+// Class 2: Bike implements Vehicle
+class Bike implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Bike starts with a kick or button.");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Bike stops with hand brakes.");
+    }
+}
+
+public class TestInterface {
+    public static void main(String[] args) {
+        Vehicle v;   // Interface reference
+
+        v = new Car();
+        v.start();
+        v.stop();
+
+        v = new Bike();
+        v.start();
+        v.stop();
+    }
+}
+```
+
+- The interface Vehicle defines what every vehicle must be able to do (start(), stop()), but not how.

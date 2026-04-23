@@ -18,3 +18,4 @@ The framework is divided into four main categories:
 | **Set**        | Set                 | HashSet, LinkedHashSet, TreeSet            | No duplicates, unordered (except TreeSet which is sorted)      |
 | **Queue/Deque**| Queue, Deque        | PriorityQueue, ArrayDeque, LinkedList      | FIFO/LIFO ordering, supports priority-based retrieval          |
 | **Map**        | Map                 | HashMap, TreeMap, LinkedHashMap, Hashtable | Key-value pairs, keys unique, values can repeat                |
+| **Concurrent Collections** | ConcurrentMap, BlockingQueue  | ConcurrentHashMap, CopyOnWriteArrayList      | Thread-safe, optimized for concurrency            |

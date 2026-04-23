@@ -361,21 +361,21 @@ Streams don’t store data; they just provide a pipeline to process it.
 ## 🔹 Key Operations
 Streams have three main categories of operations:
 
-- Intermediate operations (return another Stream, can be chained):
+-- Intermediate operations (return another Stream, can be chained):
 * filter() → keep only elements that match a condition.
 * map() → transform each element.
 * sorted() → sort elements.
 * distinct() → remove duplicates.
 
-- Terminal operations (end the pipeline, produce a result):
+-- Terminal operations (end the pipeline, produce a result):
 * forEach() → loop through and perform an action.
 * collect() → gather results into a collection.
 * reduce() → combine elements into a single result (like sum).
 
-- Optional short-circuiting operations:
+-- Optional short-circuiting operations:
 * findFirst(), anyMatch(), allMatch() → stop early when condition is met.
 
-- 🔹 Example: Salaries with Streams
+ 🔹 Example: Salaries with Streams
 
 ```java
 import java.util.*;

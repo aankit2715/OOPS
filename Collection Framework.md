@@ -12,10 +12,11 @@ The Java Collection Framework (JCF) is a set of interfaces, classes, and algorit
 ## Types of Collections in Java
 The framework is divided into four main categories:
 
-| **Type**       | **Interface**       | **Examples (Classes)**                     | **Key Use**                                                   |
-|----------------|---------------------|--------------------------------------------|---------------------------------------------------------------|
-| **List**       | List                | ArrayList, LinkedList, Vector              | Ordered, allows duplicates, indexed access                     |
-| **Set**        | Set                 | HashSet, LinkedHashSet, TreeSet            | No duplicates, unordered (except TreeSet which is sorted)      |
-| **Queue/Deque**| Queue, Deque        | PriorityQueue, ArrayDeque, LinkedList      | FIFO/LIFO ordering, supports priority-based retrieval          |
-| **Map**        | Map                 | HashMap, TreeMap, LinkedHashMap, Hashtable | Key-value pairs, keys unique, values can repeat                |
-| **Concurrent Collections** | ConcurrentMap, BlockingQueue  | ConcurrentHashMap, CopyOnWriteArrayList      | Thread-safe, optimized for concurrency            |
+| **Type**          | **Interface**       | **Examples (Classes)**                                   | **Key Use**                                                                 |
+|-------------------|---------------------|----------------------------------------------------------|------------------------------------------------------------------------------|
+| **List**          | List                | ArrayList, LinkedList, Vector                            | Ordered, allows duplicates, indexed access                                   |
+| **Set**           | Set                 | HashSet, LinkedHashSet, TreeSet                          | No duplicates, unordered (except TreeSet which is sorted)                    |
+| **Queue/Deque**   | Queue, Deque        | PriorityQueue, ArrayDeque, LinkedList                    | FIFO/LIFO ordering, supports priority-based retrieval                        |
+| **Map**           | Map                 | HashMap, TreeMap, LinkedHashMap, Hashtable               | Key-value pairs, keys unique, values can repeat                              |
+| **Concurrent**    | Concurrent Interfaces| ConcurrentHashMap, CopyOnWriteArrayList, ConcurrentLinkedQueue | Thread-safe collections for multi-threaded environments, avoid synchronization issues |
+

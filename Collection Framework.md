@@ -12,43 +12,12 @@ The Java Collection Framework (JCF) is a set of interfaces, classes, and algorit
 ## Types of Collections
 The framework is divided into four main categories:
 
-classDiagram
-    class List {
-        +Ordered
-        +Allows duplicates
-        +Index-based access
-        Examples: ArrayList, LinkedList, Vector
-    }
+# Types of Collections in Java
 
-    class Set {
-        +No duplicates
-        +May be ordered/sorted
-        Examples: HashSet, TreeSet, LinkedHashSet
-    }
-
-    class Queue {
-        +FIFO order
-        +Insertion/removal at ends
-        Examples: PriorityQueue, ArrayDeque, LinkedList
-    }
-
-    class Map {
-        +Key-value pairs
-        +Keys unique
-        Examples: HashMap, TreeMap, LinkedHashMap, ConcurrentHashMap
-    }
-
-    class ConcurrentCollections {
-        +Thread-safe
-        +Optimized for concurrency
-        Examples: ConcurrentHashMap, CopyOnWriteArrayList
-    }
-
-    %% Relationships
-    Collection <|-- List
-    Collection <|-- Set
-    Collection <|-- Queue
-    Collection <|-- Map
-    Collection <|-- ConcurrentCollections
-
-
+| **Type**                | **Interface**                        | **Examples**                                      | **Key Features**                                   |
+|--------------------------|--------------------------------------|--------------------------------------------------|---------------------------------------------------|
+| **List**                 | `List`                               | `ArrayList`, `LinkedList`, `Vector`              | Ordered, allows duplicates, index-based access    |
+| **Set**                  | `Set`, `SortedSet`, `NavigableSet`   | `HashSet`, `TreeSet`, `LinkedHashSet`            | No duplicates, may be ordered/sorted              |
+| **Queue**                | `Queue`, `Deque`, `BlockingQueue`    | `PriorityQueue`, `ArrayDeque`, `LinkedList`      | FIFO order, supports insertion/removal at ends    |
+| **Map**                  | `Map`, `SortedMap`, `NavigableMap`   | `HashMap`, `TreeMap`, `LinkedHashMap`, `ConcurrentHashMap` | Key-value pairs, keys unique                      |
+| **Concurrent Collections** | `ConcurrentMap`, `BlockingQueue`   | `ConcurrentHashMap`, `CopyOnWriteArrayList`      | Thread-safe, optimized for concurrency            |

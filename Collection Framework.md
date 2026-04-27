@@ -51,6 +51,7 @@ public class ArrayListDemo {
 2. LinkedList Example (👉 Best for frequent insertions/deletions.)
 
 - Doubly-linked structure: Each node has references to both the previous and next node.
+- It maintains insertion order (the order in which you add elements).
 - Implements multiple interfaces: List, Deque, Queue, Iterable, Cloneable, Serializable.
 - Allows null elements and duplicates.
 - Not synchronized: Must be externally synchronized for multi-threaded use.

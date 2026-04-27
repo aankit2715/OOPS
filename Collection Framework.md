@@ -281,6 +281,22 @@ public class QueueDemo {
 4. No ordering guarantee → Keys and values are not stored in insertion or sorted order.
 5. Not synchronized → Must be wrapped with Collections.synchronizedMap() for thread safety.
 
+- LinkedHashMap: 
+1. Order preservation: Iteration order is predictable (insertion order by default).
+2. Performance: Similar to HashMap → O(1) average for put, get, remove.
+3. Nulls allowed: One null key and multiple null values.
+4. Access-order mode: If constructed with accessOrder = true, it maintains order based on last access (useful for LRU caches).
+5. Not synchronized: Like HashMap, it’s not thread-safe unless wrapped.
+
+- TreeMap:
+1. Sorted order: Keys are always sorted (ascending by default).
+2. Performance:
+    - put, get, remove → O(log n) because of tree operations.
+    - Slower than HashMap (which is O(1) average), but provides ordering.
+3. Nulls:
+    - Does not allow null keys (throws NullPointerException).
+    - Allows multiple null values.
+
 ```java
 import java.util.HashMap;
 import java.util.LinkedHashMap;

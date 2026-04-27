@@ -382,7 +382,7 @@ public class ConcurrentDemo {
 - Map → Key-value pairs. Use when you need fast lookups by key.
 - Concurrent Collections → Use in multi-threaded apps to avoid synchronization issues.
 
-## iterator
+## Iterator
 
 - Use for-each loop when you just need to read values.
 - Use Iterator when you need to remove or modify elements while traversing, or when working with collections where index access isn’t available (like Set).

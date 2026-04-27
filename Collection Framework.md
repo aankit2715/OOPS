@@ -20,7 +20,10 @@ The framework is divided into four main categories:
 | **Map**           | Map                 | HashMap, TreeMap, LinkedHashMap, Hashtable               | Key-value pairs, keys unique, values can repeat                              |
 | **Concurrent**    | Concurrent Interfaces| ConcurrentHashMap, CopyOnWriteArrayList, ConcurrentLinkedQueue | Thread-safe collections for multi-threaded environments, avoid synchronization issues |
 
-1. ArrayList Example (👉 Best for fast random access.)
+1. ArrayList Example (👉 Best for fast random access.) -> Dynamic Resizing
+- ArrayList allows dynamic storage and retrieval of elements. Unlike regular arrays, its size can grow or shrink automatically as elements are added or removed. 
+- Allows duplicates and null values.
+- Not synchronized means not thread-safe. If multiple threads modify it at the same time, data corruption or unexpected behavior can occur. Since it’s not synchronized, the internal array may resize while another thread is writing, leading to race conditions or even ConcurrentModificationException.
 
 ```java
 import java.util.ArrayList;
@@ -47,6 +50,11 @@ public class ArrayListDemo {
 
 2. LinkedList Example (👉 Best for frequent insertions/deletions.)
 
+- Doubly-linked structure: Each node has references to both the previous and next node.
+- Implements multiple interfaces: List, Deque, Queue, Iterable, Cloneable, Serializable.
+- Allows null elements and duplicates.
+- Not synchronized: Must be externally synchronized for multi-threaded use.
+
 ```java
 import java.util.LinkedList;
 
@@ -72,6 +80,10 @@ public class LinkedListDemo {
 ```
 
 3. Vector Example (👉 Thread-safe, but slower than ArrayList.)
+
+- Dynamic resizing: Like ArrayList, it grows or shrinks automatically.
+- Synchronized: All methods are synchronized, making it safe for concurrent access.
+- Allows duplicates and null values.
 
 ```java
 import java.util.Vector;
@@ -164,6 +176,28 @@ public class InterfaceDemo {
 
 1. Set
 
+- HashSet:
+1. Implements Set interface → Ensures uniqueness of elements.
+2. Backed by HashMap → Uses hashing for fast lookups.
+3. No ordering guarantee → Iteration order is not fixed and may change.
+4. Allows null → Only one null element is permitted.
+5. Not synchronized → Must be wrapped with Collections.synchronizedSet() for thread safety.
+
+- LinkedHashSet: is a special type of Set that combines the features of a HashSet with a linked list to maintain insertion order.
+1. Implements Set interface → Stores unique elements only.
+2. Maintains insertion order → Unlike HashSet, iteration order is predictable.
+3. Backed by LinkedHashMap → Uses hashing for fast lookups and a linked list for order.
+4. Allows one null element.
+5.  Not synchronized → Needs external synchronization for multi-threaded use.
+
+- TreeSet: TreeSet is a collection that stores unique elements in a sorted order using a self-balancing binary search tree.
+1. Implements NavigableSet and SortedSet → Ensures elements are unique and sorted.
+2. Ordering → Maintains elements in ascending order by default, or by a custom Comparator.
+3. No duplicates allowed → Each element must be unique.
+4. Allows null? → Only if the set is empty and no comparator is used; otherwise throws NullPointerException.
+5. Not synchronized → Needs external synchronization for multi-threaded use.
+
+
 ```java
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -238,6 +272,14 @@ public class QueueDemo {
 - LinkedList → flexible queue with fast insertions.
 
 3. Map
+
+- HashMap: HashMap is a collection that stores key–value pairs using hashing. It allows fast access to values based on their keys.
+1. Implements Map interface → Stores data as key–value pairs.
+2. Unique keys → Each key can map to only one value.
+3. Allows one null key and multiple null values.
+4. No ordering guarantee → Keys and values are not stored in insertion or sorted order.
+5. Not synchronized → Must be wrapped with Collections.synchronizedMap() for thread safety.
+
 ```java
 import java.util.HashMap;
 import java.util.LinkedHashMap;

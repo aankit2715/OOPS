@@ -371,6 +371,10 @@ public class ConcurrentDemo {
 👉 Use Concurrent Collections in multi-threaded environments.
 
 - ConcurrentHashMap → safe alternative to HashMap.
+    - Splits the map into segments/buckets.
+    - Only locks the bucket being modified, not the entire map → much faster than synchronizing the whole map.
+    - Iterators are fail-safe (they don’t throw exceptions if the map changes during iteration, but may not reflect the latest updates immediately).
+    
 - CopyOnWriteArrayList → safe alternative to ArrayList for read-heavy workloads.
 - ConcurrentLinkedQueue → safe queue for concurrent producers/consumers.
 

@@ -697,7 +697,7 @@ public class TestDefaultMethod {
 ```
 
 
-## Example to explain all 4 pilor of OOPs:
+## Example to explain all 4 pillars of OOPs:
 
 ```java
 // Abstraction: Define a blueprint for all payment methods

@@ -695,3 +695,66 @@ public class TestDefaultMethod {
     }
 }
 ```
+
+
+## Example to explain all 4 pilor of OOPs:
+
+```java
+// Abstraction: Define a blueprint for all payment methods
+abstract class Payment {
+    abstract void pay(double amount);
+}
+
+// Inheritance: Different payment methods inherit from Payment
+class UpiPayment extends Payment {
+    private String upiId; // Encapsulation: private field
+
+    public UpiPayment(String upiId) {
+        this.upiId = upiId;
+    }
+
+    @Override
+    void pay(double amount) { // Polymorphism: overridden method
+        System.out.println("Paid " + amount + " via UPI ID: " + upiId);
+    }
+}
+
+class CreditCardPayment extends Payment {
+    private String cardNumber; // Encapsulation
+
+    public CreditCardPayment(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    @Override
+    void pay(double amount) { // Polymorphism
+        System.out.println("Paid " + amount + " using Credit Card: " + cardNumber);
+    }
+}
+
+class NetBankingPayment extends Payment {
+    private String accountNumber; // Encapsulation
+
+    public NetBankingPayment(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    @Override
+    void pay(double amount) { // Polymorphism
+        System.out.println("Paid " + amount + " via NetBanking Account: " + accountNumber);
+    }
+}
+
+// Main class
+public class PaymentService {
+    public static void main(String[] args) {
+        Payment p1 = new UpiPayment("user@upi");
+        Payment p2 = new CreditCardPayment("1234-5678-9876-5432");
+        Payment p3 = new NetBankingPayment("ACC12345");
+
+        p1.pay(500.0);
+        p2.pay(1200.0);
+        p3.pay(3000.0);
+    }
+}
+```

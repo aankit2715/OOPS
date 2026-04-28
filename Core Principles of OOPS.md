@@ -758,3 +758,52 @@ public class PaymentService {
     }
 }
 ```
+
+## What is Immutability?
+- An immutable object is one whose state cannot be changed after it is created.
+- Any modification results in a new object, not altering the existing one.
+- Example: String in Java is immutable — once created, you cannot change its value.
+
+🔹 Rules for Creating an Immutable Class
+    - Declare the class as final → prevents subclassing.
+    - Make all fields private and final → ensures they can’t be modified after initialization.
+    - No setters → only getters allowed.
+    - Initialize fields via constructor → values are set once at object creation.
+    - Return deep copies of mutable objects (like Date, List) instead of direct references.
+
+```java
+import java.util.Date;
+
+public final class Employee {
+    private final String name;
+    private final int id;
+    private final Date joiningDate; // mutable object
+
+    // Constructor
+    public Employee(String name, int id, Date joiningDate) {
+        this.name = name;
+        this.id = id;
+        // Defensive copy to preserve immutability
+        this.joiningDate = new Date(joiningDate.getTime());
+    }
+
+    // Getters
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Date getJoiningDate() {
+        // Return a copy, not the original
+        return new Date(joiningDate.getTime());
+    }
+}
+```
+
+🔹 Why Use Immutable Classes?
+    - Thread Safety, Immutable objects can be shared safely between threads without synchronization.
+    - Security, Prevents accidental or malicious changes to sensitive data.
+    - Caching & Performance, Immutable objects can be cached and reused (like the String pool).

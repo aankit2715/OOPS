@@ -471,6 +471,86 @@ public class StreamDemo {
 ```
 
 
+## Java 8 features: Streams, lambdas, Optional, functional interfaces
+
+1. Streams
+    - A Stream is a pipeline to process collections in a functional style.
+    - Supports operations like filter, map, reduce, collect.
+
+```java
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+
+// Pipeline: filter → map → collect
+List<String> result = names.stream()
+                           .filter(n -> n.length() > 3)   // keep names longer than 3
+                           .map(String::toUpperCase)      // convert to uppercase
+                           .sorted()                      // sort alphabetically
+                           .toList();                     // collect into list
+
+System.out.println(result);
+Output:
+[ALICE, CHARLIE, DAVID]
+```
+
+2. Lambdas
+    - A lambda expression is a concise way to represent an anonymous function.
+    - Syntax: (parameters) -> expression.
+
+```java
+List<Integer> nums = Arrays.asList(1, 2, 3, 4);
+
+// Traditional anonymous class
+nums.forEach(new java.util.function.Consumer<Integer>() {
+    public void accept(Integer n) {
+        System.out.println(n * 2);
+    }
+});
+
+// Lambda equivalent
+nums.forEach(n -> System.out.println(n * 2));
+```
+
+3. Optional
+    - Optional is a container object to avoid null checks and NullPointerException.
+    - Provides methods like isPresent(), orElse(), ifPresent().
+
+```java
+Optional<String> name = Optional.ofNullable(null);
+
+// Safe handling
+if (name.isPresent()) {
+    System.out.println("Name: " + name.get());
+} else {
+    System.out.println("No name provided");
+}
+
+// Cleaner way
+name.ifPresent(n -> System.out.println("Name: " + n));
+System.out.println(name.orElse("Default Name"));
+```
+
+4. Functional Interfaces
+    - An interface with exactly one abstract method.
+    - Examples: Runnable, Callable, Comparator, Function, Predicate.
+    - Annotated with @FunctionalInterface.
+
+```java
+@FunctionalInterface
+interface Greeting {
+    void sayHello(String name);
+}
+
+public class Demo {
+    public static void main(String[] args) {
+        Greeting g = (n) -> System.out.println("Hello, " + n);
+        g.sayHello("Alice");
+    }
+}
+```
+ 
+
+
+
 
 
  

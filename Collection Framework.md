@@ -2,7 +2,7 @@
 
 The Java Collection Framework (JCF) is a set of interfaces, classes, and algorithms in java.util package. that provide ready-made data structures (like lists, sets, maps) and methods to manipulate them. Instead of writing your own linked lists or hash tables, you use JCF’s implementations.
 
-## Why do we use it?
+## Why do we use it??
 
 - Efficiency: Provides optimized data structures.
 - Reusability: Standardized interfaces across APIs.

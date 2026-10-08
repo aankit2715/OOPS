@@ -82,9 +82,9 @@ output: Java Programming
 
 - **Security**    
 Used in:  
-1. Database URLs
-2. Network connections
-3. File paths  
+    1. Database URLs  
+    2. Network connections  
+    3. File paths   
 They cannot be changed accidentally.  
 
 - **Thread Safety**  
@@ -102,7 +102,7 @@ System.out.println(s1 == s2);
 
 Output: true
 ```  
-Ex: 2
+Ex: 2  
 ```java
 String s1 = new String("Java");
 String s2 = new String("Java");
